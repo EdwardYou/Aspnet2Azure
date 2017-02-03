@@ -1,0 +1,15 @@
+﻿================================= FarmContext ==================================
+
+Enable-Migrations -ContextTypeName AddressContext -MigrationsDirectory Migrations\AddressMigrate
+
+add-migration -ConfigurationTypeName Lab03.Migrations.AddressMigrate.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName Lab03.Migrations.AddressMigrate.Configuration
+
+================================= ApplicationDbContext ==================================
+
+Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+
+add-migration -ConfigurationTypeName MvcFarm.Migrations.Identity.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName MvcFarm.Migrations.Identity.Configuration
